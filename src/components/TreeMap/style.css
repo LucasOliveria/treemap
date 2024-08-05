@@ -6,13 +6,14 @@
 
 .tree-element {
   display: flex;
+  flex-grow: 1;
   justify-content: center;
   align-items: center;
-
+  border: 1px solid #fff;
 }
 
 .tree-element h3 {
   font-size: 1.1rem;
   padding: 0.5rem 0.5rem 0 0.5rem;
-  color: #ffffff;
+  color: #070707;
 }

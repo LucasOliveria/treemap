@@ -11,6 +11,7 @@ function TreeMap({ data, width, height }: { data: ITreeElement[], width: number,
   let totalArea = width * height;
   const originalWidth = width;
   const originalHeight = height;
+  let alfaColor = 1;
 
   const totalValue = data.reduce((sum, currentElement) => sum + currentElement.variation_earnings, 0);
   const dataAscendingOrder = data.sort((a, b) => b.variation_earnings - a.variation_earnings);
@@ -40,16 +41,15 @@ function TreeMap({ data, width, height }: { data: ITreeElement[], width: number,
         const scaleFactor = Math.sqrt(disiredArea / totalArea);
 
         const elementWidth = originalWidth * scaleFactor;
-        const elementHeight = originalHeight * scaleFactor
+        // const elementHeight = originalHeight * scaleFactor
 
 
         const elementStyle = {
           width: `${elementWidth}px`,
-          height: `${elementHeight}px`,
-          // flexGrow: elementWidth,
-          backgroundColor: element.color,
+          // height: `${elementHeight}px`,
+          backgroundColor: `rgb(28, 77, 255, ${alfaColor})`,
         }
-
+        alfaColor -= 0.09;
         return (
           <div className='tree-element' key={element.id} style={{ ...elementStyle }}>
             <div>

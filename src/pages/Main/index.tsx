@@ -10,7 +10,7 @@ function Main() {
       <TreeMap
         data={valuationFII2024}
         width={600}
-        height={500}
+        height={400}
       />
     </div>
   )
