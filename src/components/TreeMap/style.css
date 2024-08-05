@@ -1,0 +1,18 @@
+.tree-map {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20rem;
+}
+
+.tree-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.tree-element h3 {
+  font-size: 1.1rem;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  color: #ffffff;
+}
