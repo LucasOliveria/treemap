@@ -9,30 +9,11 @@ interface ITreeElement {
 
 function TreeMap({ data, width, height }: { data: ITreeElement[], width: number, height: number }) {
   let totalArea = width * height;
-  const originalWidth = width;
-  const originalHeight = height;
   let alfaColor = 1;
 
   const totalValue = data.reduce((sum, currentElement) => sum + currentElement.variation_earnings, 0);
   const dataAscendingOrder = data.sort((a, b) => b.variation_earnings - a.variation_earnings);
 
-  const elementsDimensions = dataAscendingOrder.map((element) => {
-    const desiredArea = (element.variation_earnings / totalValue) * totalArea;
-    const scaleFactor = Math.sqrt(desiredArea / totalArea);
-    const elementWidth = originalWidth * scaleFactor;
-    const elementHeight = originalHeight * scaleFactor;
-
-    return {
-      id: element.id,
-      name: element.name,
-      color: element.color,
-      variation_earnings: element.variation_earnings,
-      elementWidth,
-      elementHeight
-    };
-  });
-
-  console.log(elementsDimensions);
 
   return (
     <div className="tree-map" style={{ width, height }}>
@@ -40,16 +21,17 @@ function TreeMap({ data, width, height }: { data: ITreeElement[], width: number,
         const disiredArea = (element.variation_earnings / totalValue) * totalArea;
         const scaleFactor = Math.sqrt(disiredArea / totalArea);
 
-        const elementWidth = originalWidth * scaleFactor;
-        // const elementHeight = originalHeight * scaleFactor
+        const elementWidth = width * scaleFactor;
+        const elementHeight = height * scaleFactor
 
 
         const elementStyle = {
           width: `${elementWidth}px`,
-          // height: `${elementHeight}px`,
+          height: `${elementHeight}px`,
           backgroundColor: `rgb(28, 77, 255, ${alfaColor})`,
         }
         alfaColor -= 0.09;
+
         return (
           <div className='tree-element' key={element.id} style={{ ...elementStyle }}>
             <div>

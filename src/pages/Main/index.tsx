@@ -1,6 +1,6 @@
 import TreeMap from '../../components/TreeMap';
-import './style.css';
 import { valuationFII2024 } from "../../data/db";
+import './style.css';
 
 function Main() {
   return (

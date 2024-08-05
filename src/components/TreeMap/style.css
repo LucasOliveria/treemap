@@ -1,6 +1,7 @@
 .tree-map {
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 1;
   margin-bottom: 20rem;
 }
 
@@ -15,5 +16,5 @@
 .tree-element h3 {
   font-size: 1.1rem;
   padding: 0.5rem 0.5rem 0 0.5rem;
-  color: #070707;
+  color: #ffffff;
 }
