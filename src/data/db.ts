@@ -1,3 +1,5 @@
+// Declaração e exportação de um array de objetos representando 
+// FIIs com suas respectivas valorizações da cota + proventos em 2024
 export const valuationFII2024 = [
   {
     id: 1,
